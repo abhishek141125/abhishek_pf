@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio</title>
+<style>
+:root{
+--bg:#f6f8fb;
+--card:#ffffff;
+--text:#0f1724;
+--muted:#556176;
+--navy-800:#0b2545;
+--navy-700:#0e2a57;
+--navy-600:#123161;
+--sky-600:#49b3ff;
+--sky-500:#7fd1ff;
+--purple-700:#7a4bd6;
+--purple-600:#9b6ef0;
+--glow:0 10px 30px rgba(122,75,214,0.12);
+font-family:Inter,system-ui;
+scroll-behavior:smooth;
+}
+*{box-sizing:border-box}
+body{
+margin:0;background:var(--bg);color:var(--text);
+transition:.35s;min-height:100vh;display:flex;flex-direction:column}
+
+.photo-box{
+width:120px;height:120px;border-radius:22px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.28);
+}
+
+.photo-box img{
+width:100%;height:100%;object-fit:cover;
+}
+
+.site-header{
+display:flex;justify-content:space-between;
+align-items:center;padding:18px 28px;
+position:sticky;top:0;backdrop-filter:blur(6px);
+background:rgba(255,255,255,0.35);
+}
+
+.nav{display:flex;gap:14px}
+
+.nav a{text-decoration:none;color:var(--muted);
+padding:8px 10px;border-radius:10px;transition:.2s}
+
+.nav a:hover{color:var(--navy-800);transform:translateY(-2px)}
+
+.brand{font-weight:700;color:var(--navy-800);text-decoration:none}
+
+.hero{
+display:flex;align-items:center;
+gap:40px;padding:60px 28px;
+max-width:1100px;margin:0 auto;
+}
+
+.title{font-size:38px;margin:0;color:var(--navy-800)}
+.subtitle{margin:12px 0 18px;color:var(--muted);font-size:18px}
+
+.btn{
+border:0;padding:10px 18px;border-radius:12px;
+cursor:pointer;font-weight:600;
+}
+
+.primary{
+background:linear-gradient(90deg,var(--navy-800),var(--purple-700));
+color:#fff;box-shadow:var(--glow);
+}
+
+.panel{
+max-width:1100px;margin:40px auto;padding:28px;
+background:rgba(255,255,255,0.8);border-radius:16px;
+}
+
+.panel-title{font-size:24px;color:var(--navy-800);margin:0 0 18px}
+
+.projects-grid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+.project-card{
+border-radius:16px;overflow:hidden;background:var(--card);
+transition:.35s;cursor:pointer}
+
+.project-card:hover{
+transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+
+.project-media{
+height:140px;background-size:cover;background-position:center;
+transition:.6s}
+
+.project-card:hover .project-media{transform:scale(1.06)}
+
+.project-body{padding:16px}
+
+.small{padding:6px 10px;font-size:14px;border-radius:10px}
+
+.contact-grid{display:grid;grid-template-columns:1fr 300px;gap:20px}
+
+input,textarea{
+width:100%;padding:10px;border:1px solid rgba(0,0,0,0.1);
+border-radius:10px;font-size:15px}
+
+.form-card{display:flex;flex-direction:column;gap:12px}
+
+.site-footer{
+margin-top:auto;padding:18px 28px;display:flex;
+justify-content:space-between;color:var(--muted)}
+
+.dark{
+--bg:#071124;--card:rgba(8,12,24,0.5);
+--text:#e9eef8;--muted:#9cb3ce;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+<a class="brand" href="#home">MyPortfolio</a>
+<nav class="nav">
+<a href="#home">Home</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+<button id="themeToggle" class="btn primary">Mode</button>
+</header>
+
+<section id="home" class="hero">
+<div>
+<h1 class="title">Hi, I'm Abhishek</h1>
+<p class="subtitle">I build modern web experiences • <span id="typed"></span></p>
+<button class="btn primary" id="goProjects">View Projects</button>
+</div>
+
+<div class="photo-box">
+<img src="image1/myphoto.jpg" alt="photo">
+</div>
+
+</section>
+
+<section class="panel" id="projects">
+<h2 class="panel-title">Projects</h2>
+<div class="projects-grid">
+
+<div class="project-card">
+<div class="project-media" style="background-image:linear-gradient(135deg,var(--sky-600),var(--navy-800));"></div>
+<div class="project-body"><h3>Project One</h3><p>Animations.</p>
+<button class="btn small primary">Live</button>
+</div></div>
+
+<div class="project-card">
+<div class="project-media" style="background-image:linear-gradient(135deg,var(--purple-700),var(--sky-500));"></div>
+<div class="project-body"><h3>Project Two</h3><p>UI Effects.</p>
+<button class="btn small primary">Live</button>
+</div></div>
+
+<div class="project-card">
+<div class="project-media" style="background-image:linear-gradient(135deg,var(--navy-700),var(--purple-600));"></div>
+<div class="project-body"><h3>Project Three</h3><p>Responsive.</p>
+<button class="btn small primary">Live</button>
+</div></div>
+
+</div>
+</section>
+
+<section class="panel" id="contact">
+<h2 class="panel-title">Contact</h2>
+<div class="contact-grid">
+<form id="contactForm" class="form-card">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" rows="5" placeholder="Message" required></textarea>
+<button class="btn primary" type="submit">Send</button>
+<div id="formStatus"></div>
+</form>
+<div>
+<h4>Email</h4><p>youremail@example.com</p>
+<h4>Location</h4><p>India</p>
+</div>
+</div>
+</section>
+
+<footer class="site-footer">
+<div>© <span id="year"></span> Abhishek</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const typed=document.getElementById('typed');
+const words=['websites','UI','animations'];
+let w=0,i=0,fwd=true;
+
+function type(){
+let word=words[w];
+if(fwd){i++;typed.textContent=word.slice(0,i);
+if(i===word.length){fwd=false;setTimeout(type,1000);return}}
+else{i--;typed.textContent=word.slice(0,i);
+if(i===0){fwd=true;w=(w+1)%words.length}}
+setTimeout(type,70);
+}
+type();
+
+document.getElementById('goProjects').onclick=
+()=>document.querySelector('#projects').scrollIntoView({behavior:'smooth'});
+
+document.getElementById('themeToggle').onclick=
+()=>document.body.classList.toggle('dark');
+
+document.getElementById('contactForm').onsubmit=e=>{
+e.preventDefault();
+document.getElementById('formStatus').textContent='Sending...';
+setTimeout(()=>{
+document.getElementById('formStatus').textContent='Message sent.';
+e.target.reset();
+},900);
+};
+</script>
+
+</body>
+</html>
