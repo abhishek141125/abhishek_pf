@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en" class="dark">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Abhishek — Portfolio</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
   --bg:#071228;
@@ -12,24 +13,16 @@
   --text:#ffffff;
   --muted:rgba(255,255,255,0.7);
   --card:rgba(255,255,255,0.06);
-  --glass:rgba(255,255,255,0.08);
-  --accent-navy:#0b2545;
   --accent-sky:#49b3ff;
-  --accent-purple:#7a4bd6;
 }
-
 :root.light {
   --bg:#f6f8fb;
   --bg2:#f6f8fb;
   --text:#000;
   --muted:#444;
   --card:rgba(0,0,0,0.06);
-  --glass:rgba(255,255,255,0.6);
 }
-
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
   background:var(--bg2);
   font-family:Inter,system-ui;
@@ -40,7 +33,6 @@ body{
   gap:40px;
   padding-bottom:40px;
 }
-
 .header{
   position:fixed;
   top:18px;
@@ -57,48 +49,32 @@ body{
   background:var(--card);
   z-index:50;
 }
-
 .brand{font-weight:700;color:var(--accent-sky)}
-
 .nav{display:flex;gap:12px;align-items:center}
-
 .nav a{
   color:var(--muted);
   text-decoration:none;
   padding:8px 12px;
   border-radius:10px;
-  transition:.3s;
   font-weight:600;
   font-size:14px;
+  transition:.3s;
 }
-
 .nav a:hover{color:var(--text);transform:translateY(-3px)}
-
-.theme-toggle{
-  padding:8px 12px;
-  border-radius:10px;
-  border:1px solid var(--muted);
-  background:transparent;
-  color:var(--text);
-  cursor:pointer;
-  font-weight:700;
+.icon-link{
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
-
 .container{max-width:1200px;margin:120px auto 0;padding:0 20px}
-
 .hero{
   display:grid;
   grid-template-columns:1fr 420px;
   gap:36px;
   align-items:center;
 }
-
-.hero-left{color:var(--muted)}
-
-.h-eye{color:var(--muted);font-weight:700;margin-bottom:8px}
-.h-title{font-size:44px;color:var(--text);margin-bottom:12px}
+.h-title{font-size:44px;margin-bottom:12px}
 .h-lead{color:var(--muted);margin-bottom:18px;font-size:18px}
-
 .btn{
   padding:12px 18px;
   border-radius:12px;
@@ -106,18 +82,10 @@ body{
   cursor:pointer;
   font-weight:700;
 }
-
 .btn-primary{
   background:linear-gradient(90deg,#dc487c,#ce7e3d);
   color:#fff;
 }
-
-.btn-ghost{
-  background:transparent;
-  border:1px solid var(--muted);
-  color:var(--muted);
-}
-
 .glass-frame{
   width:380px;
   height:480px;
@@ -129,90 +97,66 @@ body{
   flex-direction:column;
   gap:16px;
 }
-
 .frame-photo{
   width:100%;
   height:70%;
   border-radius:16px;
   overflow:hidden;
 }
-
 .frame-photo img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
-
 .section{
   margin-top:40px;
   padding:26px;
   border-radius:14px;
   background:var(--card);
 }
-
-.panel-title{font-size:22px;color:var(--text);margin-bottom:14px}
-
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
+.panel-title{font-size:22px;margin-bottom:14px}
 .about-card{
   padding:18px;
   border-radius:12px;
   background:var(--card);
 }
-
-.bio{color:var(--muted);line-height:1.6;margin-top:10px}
-
 .skills-list{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
   margin-top:12px;
 }
-
 .skill{
   padding:8px 12px;
   border-radius:10px;
-  background:linear-gradient(90deg,var(--accent-sky),var(--accent-purple));
+  background:linear-gradient(90deg,var(--accent-sky),#7a4bd6);
   color:#010813;
   font-weight:800;
 }
-
 .projects-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
 }
-
 .project{
   border-radius:14px;
   padding:14px;
   background:var(--card);
   transition:.3s;
 }
-
 .project:hover{transform:translateY(-10px)}
-
 .project-media{
   height:150px;
   border-radius:12px;
   margin-bottom:12px;
   background-size:cover;
 }
-
-.project-title{color:var(--text);font-weight:800}
-.project-desc{color:var(--muted)}
-
 .contact-grid{
   display:grid;
   grid-template-columns:1fr 340px;
   gap:20px;
   margin-top:12px;
 }
-
 input,textarea{
   width:100%;
   padding:12px;
@@ -221,9 +165,7 @@ input,textarea{
   background:transparent;
   color:var(--text);
 }
-
 textarea{min-height:140px}
-
 .footer{
   margin:40px auto;
   display:flex;
@@ -231,6 +173,17 @@ textarea{min-height:140px}
   max-width:1200px;
   color:var(--muted);
 }
+a.social{
+  color:var(--accent-sky);
+  font-weight:700;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:12px;
+  font-size:16px;
+}
+a.social:hover{opacity:.8}
 </style>
 </head>
 
@@ -243,6 +196,9 @@ textarea{min-height:140px}
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <a class="icon-link" href="https://www.linkedin.com/in/abhishek-devmurari-246374398/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+    <a class="icon-link" href="https://github.com/abhishek141125" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+    <a class="icon-link" href="https://www.instagram.com/abhi_14_11/" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
     <button id="themeBtn" class="theme-toggle">☀</button>
   </nav>
 </header>
@@ -250,7 +206,7 @@ textarea{min-height:140px}
 <div class="container">
 
 <section id="home" class="hero">
-  <div class="hero-left">
+  <div>
     <h1 class="h-title">I design and build delightful web experiences</h1>
     <p class="h-lead">I create fast, animated and modern UI using HTML, CSS and JavaScript.</p>
     <button class="btn btn-primary">See Projects</button>
@@ -261,56 +217,6 @@ textarea{min-height:140px}
       <img src="myphoto.jpg" alt="">
     </div>
     <div style="font-weight:900;color:var(--text)">Abhishek</div>
-  </div>
-</section>
-
-<section id="about" class="section">
-  <div class="panel-title">About</div>
-  <div class="grid-2">
-    <div class="about-card">
-      <div style="font-size:18px;color:var(--text);font-weight:900">Who I am</div>
-      <p class="bio">I build modern, animated and responsive websites using HTML, CSS and JavaScript.</p>
-    </div>
-    <div class="about-card">
-      <div style="font-size:18px;color:var(--text);font-weight:900">Experience</div>
-      <p class="bio">Frontend Developer — 2023 to Present</p>
-    </div>
-  </div>
-</section>
-
-<section id="skills" class="section">
-  <div class="panel-title">Skills</div>
-  <div class="skills-list">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">Animations</div>
-    <div class="skill">Responsive</div>
-  </div>
-</section>
-
-<section id="projects" class="section">
-  <div class="panel-title">Projects</div>
-  <div class="projects-grid">
-
-    <div class="project">
-      <div class="project-media" style="background-image:linear-gradient(135deg,#49b3ff,#0b2545)"></div>
-      <div class="project-title">Interactive UI Kit</div>
-      <div class="project-desc">Modern UI with animations.</div>
-    </div>
-
-    <div class="project">
-      <div class="project-media" style="background-image:linear-gradient(135deg,#7a4bd6,#49b3ff)"></div>
-      <div class="project-title">Animated Landing</div>
-      <div class="project-desc">Responsive landing page.</div>
-    </div>
-
-    <div class="project">
-      <div class="project-media" style="background-image:linear-gradient(135deg,#112238,#532e9e)"></div>
-      <div class="project-title">Performance Site</div>
-      <div class="project-desc">Fast lightweight site.</div>
-    </div>
-
   </div>
 </section>
 
@@ -328,6 +234,16 @@ textarea{min-height:140px}
     <div class="about-card">
       <div style="font-weight:900;color:var(--text)">Contact Info</div>
       <p style="margin-top:10px;color:var(--muted)">email@example.com</p>
+
+      <a class="social" href="https://www.linkedin.com/in/abhishek-devmurari-246374398/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>LinkedIn
+      </a>
+      <a class="social" href="https://github.com/abhishek141125" target="_blank">
+        <i class="fa-brands fa-github"></i>GitHub
+      </a>
+      <a class="social" href="https://www.instagram.com/abhi_14_11/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>Instagram
+      </a>
     </div>
   </div>
 </section>
@@ -339,18 +255,17 @@ textarea{min-height:140px}
 </div>
 
 <script>
-const btn=document.getElementById('themeBtn');
+const btn=document.getElementById('themeBtn')
 btn.onclick=()=>{
-  const html=document.documentElement;
+  const html=document.documentElement
   if(html.classList.contains("dark")){
-    html.classList.remove("dark");
-    html.classList.add("light");
-    btn.textContent="🌙";
-  }
-  else{
-    html.classList.remove("light");
-    html.classList.add("dark");
-    btn.textContent="☀";
+    html.classList.remove("dark")
+    html.classList.add("light")
+    btn.textContent="🌙"
+  } else {
+    html.classList.remove("light")
+    html.classList.add("dark")
+    btn.textContent="☀"
   }
 }
 </script>
