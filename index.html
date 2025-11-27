@@ -1,271 +1,272 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Abhishek — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
-  --bg:#050914;
+  --bg:#071228;
+  --bg2: linear-gradient(180deg,#021023 0%, #071228 100%);
   --text:#ffffff;
-  --muted:#8a92a6;
+  --muted:rgba(255,255,255,0.7);
   --card:rgba(255,255,255,0.06);
-  --accent:#4db8ff;
+  --accent-sky:#49b3ff;
 }
-html.light {
-  --bg:#f7f9fb;
+:root.light {
+  --bg:#f6f8fb;
+  --bg2:#f6f8fb;
   --text:#000;
   --muted:#444;
   --card:rgba(0,0,0,0.06);
-  --accent:#007bff;
 }
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Poppins,system-ui;
-  transition:background .35s ease,color .35s ease;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-  background:var(--bg);
+  background:var(--bg2);
+  font-family:Inter,system-ui;
   color:var(--text);
-  overflow-x:hidden;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+  padding-bottom:40px;
 }
-.stars{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  z-index:-1;
-  background:radial-gradient(circle at 50% 50%,#0d1224,#050914);
-  transition:opacity .4s ease;
-}
-html.light .stars{opacity:0}
 .header{
   position:fixed;
-  top:22px;
+  top:18px;
   left:50%;
   transform:translateX(-50%);
   width:92%;
-  max-width:1180px;
+  max-width:1200px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:14px 24px;
-  border-radius:18px;
-  backdrop-filter:blur(14px);
+  padding:10px 16px;
+  border-radius:14px;
+  backdrop-filter:blur(10px);
   background:var(--card);
   z-index:50;
 }
-.brand{
-  font-size:26px;
-  font-weight:700;
-  color:var(--accent);
-}
-.nav{display:flex;gap:16px;align-items:center}
+.brand{font-weight:700;color:var(--accent-sky)}
+.nav{display:flex;gap:12px;align-items:center}
 .nav a{
   color:var(--muted);
   text-decoration:none;
-  font-weight:500;
-  font-size:15px;
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:600;
+  font-size:14px;
+  transition:.3s;
 }
 .nav a:hover{color:var(--text);transform:translateY(-3px)}
-.theme-toggle{
+.icon-link{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.container{max-width:1200px;margin:120px auto 0;padding:0 20px}
+.hero{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:36px;
+  align-items:center;
+}
+.h-title{font-size:44px;margin-bottom:12px}
+.h-lead{color:var(--muted);margin-bottom:18px;font-size:18px}
+.btn{
+  padding:12px 18px;
+  border-radius:12px;
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+}
+.btn-primary{
+  background:linear-gradient(90deg,#dc487c,#ce7e3d);
+  color:#fff;
+}
+.glass-frame{
+  width:380px;
+  height:480px;
+  border-radius:20px;
+  padding:18px;
+  background:var(--card);
+  backdrop-filter:blur(12px);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.frame-photo{
+  width:100%;
+  height:70%;
+  border-radius:16px;
+  overflow:hidden;
+}
+.frame-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.section{
+  margin-top:40px;
+  padding:26px;
+  border-radius:14px;
+  background:var(--card);
+}
+.panel-title{font-size:22px;margin-bottom:14px}
+.about-card{
+  padding:18px;
+  border-radius:12px;
+  background:var(--card);
+}
+.skills-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
+}
+.skill{
   padding:8px 12px;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--accent-sky),#7a4bd6);
+  color:#010813;
+  font-weight:800;
+}
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.project{
+  border-radius:14px;
+  padding:14px;
+  background:var(--card);
+  transition:.3s;
+}
+.project:hover{transform:translateY(-10px)}
+.project-media{
+  height:150px;
+  border-radius:12px;
+  margin-bottom:12px;
+  background-size:cover;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:20px;
+  margin-top:12px;
+}
+input,textarea{
+  width:100%;
+  padding:12px;
   border-radius:10px;
   border:1px solid var(--muted);
   background:transparent;
   color:var(--text);
-  cursor:pointer;
-  font-weight:700;
-  font-size:18px;
-  transition:transform .4s ease;
 }
-.theme-toggle.rotate{
-  transform:rotate(360deg);
-}
-.page{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 24px;
-}
-.container{
-  max-width:1180px;
-  width:100%;
+textarea{min-height:140px}
+.footer{
+  margin:40px auto;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-}
-.h-title{
-  font-size:54px;
-  font-weight:700;
-  line-height:1.2;
-}
-.h-sub{
+  max-width:1200px;
   color:var(--muted);
-  font-size:20px;
-  margin-top:14px;
 }
-.download-btn{
-  padding:14px 22px;
-  border-radius:12px;
-  background:var(--accent);
-  color:#010813;
-  font-weight:800;
-  display:inline-block;
-  margin-top:26px;
+a.social{
+  color:var(--accent-sky);
+  font-weight:700;
   text-decoration:none;
-}
-.photo-box{
-  width:380px;
-  height:480px;
-  border-radius:24px;
-  background:var(--card);
-  overflow:hidden;
-}
-.photo-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.5s;
-}
-.photo-box:hover img{transform:scale(1.08)}
-.section-title{
-  font-size:36px;
-  font-weight:700;
-  margin-bottom:24px;
-}
-.section-box{
-  padding:36px;
-  border-radius:20px;
-  background:var(--card);
-  width:100%;
-}
-.social{
-  color:var(--accent);
-  font-weight:700;
   display:flex;
   align-items:center;
-  gap:12px;
-  font-size:18px;
-  margin-top:16px;
+  gap:10px;
+  margin-top:12px;
+  font-size:16px;
 }
-.footer{
-  text-align:center;
-  color:var(--muted);
-  font-size:15px;
-  padding:30px 0;
-}
+a.social:hover{opacity:.8}
 </style>
 </head>
 
 <body>
-
-<div class="stars"></div>
-
 <header class="header">
   <div class="brand">Abhishek</div>
   <nav class="nav">
     <a href="#home">Home</a>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-    <button id="themeBtn" class="theme-toggle">🌙</button>
+    <a class="icon-link" href="https://www.linkedin.com/in/abhishek-devmurari-246374398/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+    <a class="icon-link" href="https://github.com/abhishek141125" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+    <a class="icon-link" href="https://www.instagram.com/abhi_14_11/" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
+    <button id="themeBtn" class="theme-toggle">☀</button>
   </nav>
 </header>
 
-<section id="home" class="page">
-  <div class="container">
-    <div>
-      <h1 class="h-title">I build premium digital experiences</h1>
-      <p class="h-sub">Focused on clarity, confidence and modern UI.</p>
-      <a href="resume.pdf" download class="download-btn"><i class="fa-solid fa-download"></i> Download Resume</a>
+<div class="container">
+
+<section id="home" class="hero">
+  <div>
+    <h1 class="h-title">I design and build delightful web experiences</h1>
+    <p class="h-lead">I create fast, animated and modern UI using HTML, CSS and JavaScript.</p>
+    <button class="btn btn-primary">See Projects</button>
+  </div>
+
+  <div class="glass-frame">
+    <div class="frame-photo">
+      <img src="myphoto.jpg" alt="">
     </div>
-    <div class="photo-box">
-      <img src="myphoto.jpg">
+    <div style="font-weight:900;color:var(--text)">Abhishek</div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="panel-title">Contact</div>
+
+  <div class="contact-grid">
+    <form>
+      <input placeholder="Your Name">
+      <input placeholder="Email">
+      <textarea placeholder="Message"></textarea>
+      <button class="btn btn-primary" style="margin-top:12px">Send</button>
+    </form>
+
+    <div class="about-card">
+      <div style="font-weight:900;color:var(--text)">Contact Info</div>
+      <p style="margin-top:10px;color:var(--muted)">email@example.com</p>
+
+      <a class="social" href="https://www.linkedin.com/in/abhishek-devmurari-246374398/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>LinkedIn
+      </a>
+      <a class="social" href="https://github.com/abhishek141125" target="_blank">
+        <i class="fa-brands fa-github"></i>GitHub
+      </a>
+      <a class="social" href="https://www.instagram.com/abhi_14_11/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>Instagram
+      </a>
     </div>
   </div>
 </section>
 
-<section id="about" class="page">
-  <div class="container">
-    <div class="section-box">
-      <div class="section-title">About</div>
-      I create modern, business-grade interfaces with smooth interactions and performance.
-    </div>
-  </div>
-</section>
+</div>
 
-<section id="projects" class="page">
-  <div class="container">
-    <div class="section-box">
-      <div class="section-title">Projects</div>
-      <div class="projects-grid">
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="page">
-  <div class="container">
-    <div class="section-box">
-      <div class="section-title">Contact</div>
-      <a class="social"><i class="fa-solid fa-phone"></i>9904615277</a>
-      <a class="social"><i class="fa-solid fa-envelope"></i>abhishekdevmurari1411@gmail.com</a>
-      <a class="social" href="https://www.linkedin.com/in/abhishek-devmurari-246374398/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-      <a class="social" href="https://github.com/abhishek141125" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
-      <a class="social" href="https://www.instagram.com/abhi_14_11/" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
-    </div>
-  </div>
-</section>
-
-<div class="footer">© 2025 Abhishek</div>
+<div class="footer">
+  <div>© 2025 Abhishek</div>
+</div>
 
 <script>
 const btn=document.getElementById('themeBtn')
-const html=document.documentElement
-
-function applyTheme(mode){
-  html.className=mode
-  btn.textContent=mode==="light"?"🌙":"☀"
-  btn.classList.add("rotate")
-  setTimeout(()=>btn.classList.remove("rotate"),400)
-  localStorage.theme=mode
-}
-
-if(localStorage.theme){
-  applyTheme(localStorage.theme)
-} else {
-  if(window.matchMedia("(prefers-color-scheme: light)").matches){
-    applyTheme("light")
-  } else {
-    applyTheme("dark")
-  }
-}
-
 btn.onclick=()=>{
-  applyTheme(html.classList.contains("light")?"dark":"light")
-}
-
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{
-  applyTheme(e.matches?"dark":"light")
-})
-
-for(let i=0;i<90;i++){
-  const s=document.createElement("div")
-  s.className="star"
-  s.style.left=Math.random()*100+"%"
-  s.style.top=Math.random()*100+"%"
-  s.style.animationDelay=Math.random()*3+"s"
-  document.querySelector(".stars").appendChild(s)
+  const html=document.documentElement
+  if(html.classList.contains("dark")){
+    html.classList.remove("dark")
+    html.classList.add("light")
+    btn.textContent="🌙"
+  } else {
+    html.classList.remove("light")
+    html.classList.add("dark")
+    btn.textContent="☀"
+  }
 }
 </script>
 
