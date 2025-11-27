@@ -153,6 +153,13 @@ a.social{
   font-size:16px;
 }
 a.social:hover{opacity:.8}
+.email-link{
+  color:var(--muted);
+  text-decoration:none;
+}
+.email-link:hover{
+  color:var(--accent-sky);
+}
 
 @media (max-width:768px){
   .hero{
@@ -221,7 +228,9 @@ a.social:hover{opacity:.8}
 
     <div class="about-card">
       <div style="font-weight:900;color:var(--text)">Contact Info</div>
-      <p style="margin-top:10px;color:var(--muted)">abhishekdevmurari1411@gmail.com</p>
+      <p style="margin-top:10px;color:var(--muted)">
+        <a href="mailto:abhishekdevmurari1411@gmail.com" class="email-link">abhishekdevmurari1411@gmail.com</a>
+      </p>
 
       <a class="social" href="https://www.linkedin.com/in/abhishek-devmurari-246374398/" target="_blank">
         <i class="fa-brands fa-linkedin"></i>LinkedIn
